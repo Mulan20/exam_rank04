@@ -26,7 +26,7 @@ int picoshell(char **cmds[])
         if (pid == -1)
         {
             //if they have created the pipe as there is a following command, we must close that and return error
-            if (cmd[i + 1])
+            if (cmds[i + 1])
             {
                 close(fd[0]);
                 close(fd[1]);
